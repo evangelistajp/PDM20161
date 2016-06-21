@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Cadastro cadastro;
 
     public MainActivity() {
+
         this.cadastro = new Cadastro();
     }
 
@@ -33,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
         this.listView = (ListView) findViewById(R.id.listView);
 
-        ArrayAdapter<Place> adapter = new ArrayAdapter<Place>(this, android.R.layout.simple_list_item_1, this.cadastro.get());
+        //ArrayAdapter<Place> adapter = new ArrayAdapter<Place>(this, android.R.layout.simple_list_item_1, this.cadastro.get());
+        PlaceAdapter adapter = new PlaceAdapter(this.cadastro, this);
         this.listView.setAdapter(adapter);
 
         this.listView.setOnItemClickListener(new OnClickList() );
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add(0, ADD, 1, "Add");
+        menu.add(0, ADD, 1, "Adicionar lugar");
         menu.add(0, SOBRE, 2, "Sobre");
         return super.onCreateOptionsMenu(menu);
     }
@@ -73,12 +75,12 @@ public class MainActivity extends AppCompatActivity {
                 String desc = data.getStringExtra("DESC");
                 Bitmap photo = (Bitmap) data.getParcelableExtra("PHOTO");
 
-                Log.i("APP", "shasgahdja " +photo);
+                //Log.i("APP", "shasgahdja " +photo);
 
                 Place place = new Place(nome,desc,photo);
                 this.cadastro.insere(place);
-                ((ArrayAdapter)this.listView.getAdapter()).notifyDataSetChanged();
-
+                //((ArrayAdapter)this.listView.getAdapter()).notifyDataSetChanged();
+                ((PlaceAdapter)this.listView.getAdapter()).notifyDataSetChanged();
                 Toast.makeText(this, place.getNome(), Toast.LENGTH_SHORT).show();
             }
         }
@@ -95,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             Place place = (Place) parent.getAdapter().getItem(position);
 
             builder.setMessage("NOME: " +((Place) parent.getAdapter().getItem(position)).getNome()+
-                    "\nDESC: "+ ((Place) parent.getAdapter().getItem(position)).getDesc());
+                    "\nDESCRIÇÃO: "+ ((Place) parent.getAdapter().getItem(position)).getDesc() + "\nFOTO:" + ((Place)parent.getAdapter().getItem(position)).getPhoto());
 
             builder.setIcon(R.mipmap.ic_launcher);
             builder.setPositiveButton("Ok", null);

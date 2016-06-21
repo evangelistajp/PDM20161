@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Adicionar novo Lugar"
-        android:textSize="32sp"
+        android:textSize="23sp"
         />
 
     <EditText
@@ -35,23 +35,23 @@
 
     <Button
         android:id="@+id/btn_photo"
-        android:text="Foto!"
+        android:text="Foto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Localização"
-        android:id="@+id/textView2"
-        android:layout_gravity="center_horizontal" />
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:id="@+id/textView2"
+    android:layout_gravity="center_horizontal"/>
+    <!--android:text="Localização" -->
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add"
+        android:text="Adicionar"
         android:id="@+id/btn_add"
         android:layout_gravity="center_horizontal" />
 
