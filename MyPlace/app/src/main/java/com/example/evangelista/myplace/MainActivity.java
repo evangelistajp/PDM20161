@@ -73,11 +73,12 @@ public class MainActivity extends AppCompatActivity {
             if (requestCode == ADD){
                 String nome = data.getStringExtra("NOME");
                 String desc = data.getStringExtra("DESC");
+                String gps = data.getStringExtra("GPS");
                 Bitmap photo = (Bitmap) data.getParcelableExtra("PHOTO");
 
                 //Log.i("APP", "shasgahdja " +photo);
 
-                Place place = new Place(nome,desc,photo);
+                Place place = new Place(nome,desc,gps,photo);
                 this.cadastro.insere(place);
                 //((ArrayAdapter)this.listView.getAdapter()).notifyDataSetChanged();
                 ((PlaceAdapter)this.listView.getAdapter()).notifyDataSetChanged();
@@ -97,7 +98,9 @@ public class MainActivity extends AppCompatActivity {
             Place place = (Place) parent.getAdapter().getItem(position);
 
             builder.setMessage("NOME: " +((Place) parent.getAdapter().getItem(position)).getNome()+
-                    "\nDESCRIÇÃO: "+ ((Place) parent.getAdapter().getItem(position)).getDesc() + "\nFOTO:" + ((Place)parent.getAdapter().getItem(position)).getPhoto());
+                    "\nDESCRIÇÃO: "+ ((Place) parent.getAdapter().getItem(position)).getDesc() +
+                    "\nGPS: "+ ((Place) parent.getAdapter().getItem(position)).getGps()+
+                    "\nFOTO:" + ((Place)parent.getAdapter().getItem(position)).getPhoto());
 
             builder.setIcon(R.mipmap.ic_launcher);
             builder.setPositiveButton("Ok", null);

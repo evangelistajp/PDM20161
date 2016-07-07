@@ -16,11 +16,13 @@ public class Place {
 
     private String nome;
     private String desc;
+    private String gps;
     private Bitmap photo;
 
-    public Place(String nome, String desc, Bitmap photo) {
+    public Place(String nome, String desc,String gps, Bitmap photo) {
         this.nome = nome;
         this.desc = desc;
+        this.gps = gps;
         this.photo = photo;
     }
 
@@ -48,11 +50,20 @@ public class Place {
         this.photo = photo;
     }
 
+    public String getGps() {
+        return gps;
+    }
+
+    public void setGps(String gps) {
+        this.gps = gps;
+    }
+
     @Override
     public String toString() {
         return "Place:" +
                 "nome='" + nome + '\'' +
                 ", desc='" + desc + '\''+
+                ", gps='" + gps + '\''+
                 "photo :" + getPhoto();
     }
 
