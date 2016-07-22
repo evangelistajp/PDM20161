@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2bbdc2</color>
+    <color name="colorPrimaryDark">#0d7d81</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="LightBlue">#ADD8E6</color>
+    <color name="Aquamarine">#DB7093</color>
+    <color name="MediumTurquoise">#48D1CC</color>
+    <color name="LightSeaGreen">#20B2AA</color>
+
+
+</resources>

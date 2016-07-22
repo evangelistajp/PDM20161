@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.evangelista.partiujp.Activity.AddEventoActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Adicionar novo evento"
+        android:textSize="24sp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_add_nomeEvento"
+        android:hint="Nome"
+        android:textColor="@color/colorPrimaryDark"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+        android:textColorHint="@color/Aquamarine"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_add_descEvento"
+        android:hint="Descrição"
+        android:textColor="@color/colorPrimaryDark"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+        android:textColorHint="@color/Aquamarine"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="R$:"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/et_add_valorEvento"
+        android:textColor="@color/colorPrimaryDark"
+        android:fontFamily="casual"
+        android:textStyle="bold"
+        android:textColorHint="@color/Aquamarine"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:hint="10/10/2016"
+            android:textSize="24sp"
+            android:id="@+id/tv_add_dataEvento"
+            android:gravity="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:textColorHint="@color/Aquamarine"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:hint="10:00"
+            android:textSize="24sp"
+            android:id="@+id/tv_add_HoraEvento"
+            android:gravity="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:textColorHint="@color/Aquamarine"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:id="@+id/btn_add_DataEvento"
+            android:layout_centerHorizontal="true"
+            android:text="Escolher data"
+            android:onClick="MostrarData"
+            android:backgroundTint="@color/Aquamarine"/>
+
+        <Button
+            android:id="@+id/btn_add_HoraEvento"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:layout_centerHorizontal="true"
+            android:text="Escolher Hora"
+            android:onClick="MostrarData"
+            android:backgroundTint="@color/Aquamarine"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!--android:text="Localização" -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:id="@+id/tv_add_gpsEvento"
+            android:text="GPS"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColorHint="@color/Aquamarine"/>
+
+        <Button
+            android:id="@+id/btn_add_gps"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="GPS"
+            android:layout_gravity="center_vertical"
+            android:backgroundTint="@color/Aquamarine"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adicionar"
+        android:id="@+id/btn_add"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/colorPrimary"/>
+
+</LinearLayout>
